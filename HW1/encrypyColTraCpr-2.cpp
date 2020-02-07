@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <unordered_map>
+#include <queue>
+
+using namespace std;
+
+int main() {
+
+    string s = "tafoerhbmkoeadaaaaieomnsdetctnasnbdopeaplhttaigseiaobevnkuiskdreetatawbonadntadxtpueshtodujwmoootuananooerawirhihdeooriiseehhnpenastetioahtaiieeueatoleoortyoevniteitntkealerlaenoaseailouivfptolvvcohreonothhithbcsechianhteeetrswrooewrtegehvsievseccaaunarnodnxterqumotntrnrutreosuksrtaswesaslrngesaaruocenannaaepispdhnietpaohgeotwbitchcsuhwngentahteleeuirtmeuviwosiwtanrdhasialypeiuarivtotcrezasacheerharntonesoptdiwteetpnnssetifxsetfesdeastsawqenoastneneddrooipgedelfrpacwlifibrliihtocengaswflhltpfcetiatbeowtheldouwoaootlostrettsteseaneiaemosvbreiovionhfmfenefoxcnahdtopoeehotxnlrnrrpgnogitrhihararetoeiraoeehccaornvusdihotdoyocsaosarfouurstymatymnvweslmmaharpohssoltmnenfhnoefeorvrnfaorgeodeadrtcetrareetnnntrrrhpvrutuhwucigpslnhwhecuisespsatpauwntcrrieshtseiareepoirieemheeoeiteplseentshleciktoheueheeeunneoareldtuntanteipdaueeastypetrberutbtadohomwctoogttpnselllbmyianvdacueaignmolnwatnfrhenhheloreigbstoneiretcleafisneronirosyteaonennemetnnlocehrrosrzctctamdnelndhrwtaflepeahnftetitsnenopwdhuwhnetkhpliuncktuhaycbneanfohrrhddittdtoinolooefaahtnpottlatoodhatlrodnolrfoooaotssertustifhhadhasrvorhorznneiseuqwcueruiioeotgalcaogseohntsgfonhaheansesadriarsefepetihhnonrtncrekhnunaydcteonrefotiwbgpcvourtoehtmyhtedeelcsuspinelkeutmeaestetigspiswgetcoaunorusotetohvhspiudecenyetnaeislppeitieemiogeiedasnsktrslohisegeaeeeceehaollnsdhnrtnrrsogwuemoessawdahtedeltehfofnntisrnetlusonnahtdhrahwcaolenxbehfmtypepitobecin";
+
+    unordered_map<char, int> m;
+    for (auto c : s) {
+        m[c]++;
+    }
+    
+    auto comp = [](pair<char, int>& a, pair<char, int>& b) {return a.first > b.first;};
+    priority_queue<pair<char, int>, vector<pair<char, int>>, decltype(comp)> pq(comp);
+    for (auto x : m) {
+        pq.push({x.first, x.second});
+    }
+    while (!pq.empty()) {
+        auto p = pq.top();
+        pq.pop();
+        // cout << p.first << " " << p.second << endl;
+        cout << p.second << endl;
+    }
+
+    return 0;
+}
