@@ -1,0 +1,32 @@
+1. install
+    sudo apt-get install john
+2. combine files
+    unshadow /etc/passwd /etc/shadow > test_passwd
+3. use dictionary cract password
+    john --wordlist=/usr/share/john/password.lst test_passwd
+    // 如果使用自己的dic, 将 wordlist 后的路径改下就可以
+4. wait for the results
+
+    Loaded 3 password hashes with 3 different salts (crypt, generic crypt(3) [?/64])
+    Press 'q' or Ctrl-C to abort, almost any other key for status
+
+    toor             (root)
+    econtroller      (john)
+    challengeaccepted (hackmeifyoucan)
+
+    Use the "--show" option to display all of the cracked passwords reliably
+    Session completed
+
+5. show results
+    john --show test_passwd
+    root:toor:0:0:root:/root:/bin/bash
+    john:econtroller:1000:1001:John,Ripper,,:/home/john:/bin/bash
+    hackmeifyoucan:challengeaccepted:1001:1001::/home/hackmeifyoucan:/bin/sh
+
+    3 password hashes cracked, 0 left
+
+    
+
+
+
+

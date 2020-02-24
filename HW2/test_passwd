@@ -1,0 +1,9 @@
+root:$6$fivtL8Y1$EYQ64Bv86w2oNPnTo3piSwLbIoW62.Ta6hYIXV1o1NPDeDy9kdGqDh7RUzItSV9qXNRqKKR52ARnozkSSKo3Y/:0:0:root:/root:/bin/bash
+games:*:5:60:games:/usr/games:/usr/sbin/nologin
+mail:*:8:8:mail:/var/mail:/usr/sbin/nologin
+news:*:9:9:news:/var/spool/news:/usr/sbin/nologin
+nobody:*:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+snmp:*:121:129::/var/lib/snmp:/usr/sbin/nologin
+postgres:*:122:132:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+john:$6$yyA8kSzk$35tQZcZTvaMuKCvWvRK6SkIP44xCHtvrMHp5gWYG9oXiUGL85B.W02OxvGQpN0ITwFMKeZdXRMvoStqOTvLLh0:1000:1001:John,Ripper,,:/home/john:/bin/bash
+hackmeifyoucan:$6$xEAA3qy4$AeDA3Yx/emzujOfTLkC6WJH0KWWwmMkDhKgzPI98.X0RcYeT9ynOwtHMOlWSqIraVyIew4udnt.HHbX0q.rlY/:1001:1001::/home/hackmeifyoucan:/bin/sh
